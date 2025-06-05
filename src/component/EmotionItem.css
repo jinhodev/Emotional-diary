@@ -1,0 +1,126 @@
+.EmotionItem {
+  cursor: pointer;
+  border-radius: var(--border-radius-md);
+  padding: 15px 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+  transform: translateY(0);
+  animation: slideUp 0.5s forwards;
+  opacity: 0;
+  transform: translateY(20px);
+  background-color: var(--light);
+  border: 1px solid var(--gray);
+}
+
+.EmotionItem:nth-child(1) { animation-delay: 0.1s; }
+.EmotionItem:nth-child(2) { animation-delay: 0.2s; }
+.EmotionItem:nth-child(3) { animation-delay: 0.3s; }
+.EmotionItem:nth-child(4) { animation-delay: 0.4s; }
+.EmotionItem:nth-child(5) { animation-delay: 0.5s; }
+
+.EmotionItem::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.7) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 0;
+}
+
+.EmotionItem:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: var(--shadow-md);
+}
+
+.EmotionItem:hover::before {
+  opacity: 0.4;
+}
+
+.EmotionItem:active {
+  transform: translateY(1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.EmotionItem img {
+  width: 60%;
+  margin-bottom: 12px;
+  transition: all var(--transition-normal);
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.EmotionItem:hover img {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.EmotionItem span {
+  font-size: 14px;
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
+  transition: all var(--transition-fast);
+  color: var(--text);
+}
+
+.EmotionItem:hover span {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.EmotionItem_off {
+  background-color: var(--light);
+  border: 1px solid var(--gray);
+}
+
+.EmotionItem_on_1 {
+  background-color: var(--primary-light);
+  color: white;
+  border-color: var(--primary-light);
+}
+
+.EmotionItem_on_1 span {
+  color: white;
+}
+
+.EmotionItem_on_2 {
+  background-color: var(--secondary);
+  color: var(--dark);
+  border-color: var(--secondary);
+}
+
+.EmotionItem_on_2 span {
+  color: var(--dark);
+}
+
+.EmotionItem_on_3 {
+  background-color: var(--gray-light);
+  color: var(--text);
+  border-color: var(--gray);
+}
+
+.EmotionItem_on_4 {
+  background-color: var(--gray-dark);
+  color: var(--text);
+  border-color: var(--gray-dark);
+}
+
+.EmotionItem_on_5 {
+  background-color: var(--tertiary);
+  color: white;
+  border-color: var(--tertiary);
+}
+
+.EmotionItem_on_5 span {
+  color: white;
+}
